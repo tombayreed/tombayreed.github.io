@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臭鼬 - 生态习性、防御机制与饲养指南</title>
+    <meta name="description" content="臭鼬专题页面，详细介绍臭鼬的生物学特征、独特的化学防御机制、栖息环境及饲养注意事项。提供常见品种对比、饲养建议及保护现状，帮助读者深入了解这一独特的小型哺乳动物。">
+    <meta name="keywords" content="臭鼬, 麝香鼬, 防御机制, 饲养指南, 哺乳动物, 野生动物">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3e4e50;
+            --accent-color: #8c3b3b;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-secondary: #5f6c7b;
+            --border-color: #e9ecef;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #a04040;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-item {
+            display: flex;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        .feature-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #fcfcfc;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+            font-size: 1.5rem;
+            line-height: 1;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <span>🐾</span> 臭鼬百科
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#overview" class="active">物种概览</a></li>
+                <li><a href="#defense">防御机制</a></li>
+                <li><a href="#habitat">栖息环境</a></li>
+                <li><a href="#faq">饲养指南</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>臭鼬：自然界独特的化学防御大师</h1>
+    <p>了解臭鼬如何利用特殊的腺体喷射刺激性液体进行防御，探索它们的生态习性、栖息地分布以及作为宠物的饲养挑战。</p>
+    <a href="#overview" class="cta-button">了解更多</a>
+</section>
+
+<main class="container">
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="section-header">
+            <h2>物种概览</h2>
+            <p>鼬科动物中极具辨识度的成员</p>
+        </div>
+        <div class="grid-2">
+            <article class="card">
+                <img src="https://picsum.photos/seed/ferret/400/250" alt="臭鼬生活习性示意图" class="card-image">
+                <div class="card-content">
+                    <span class="card-tag">生物学特征</span>
+                    <h3>体型与外貌</h3>
+                    <p>臭鼬通常体型修长，四肢较短，尾巴粗大。它们的毛色主要为黑色，腹部呈白色或浅灰色，形成明显的条纹或斑块，这种警戒色有助于在夜间保护自己。</p>
+                </div>
+            </article>
+            <article class="card">
+                <img src="https://picsum.photos/seed/nature/400/250" alt="野外栖息地" class="card-image">
+                <div class="card-content">
+                    <span class="card-tag">分布区域</span>
+                    <h3>全球分布</h3>
+                    <p>臭鼬主要分布在北美洲，少数种类（如欧洲臭鼬）分布在欧洲和亚洲。它们适应多种环境，从茂密的森林到开阔的草原，甚至城市郊区。</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Defense Mechanism Section -->
+    <section id="defense">
+        <div class="section-header">
+            <h2>化学防御机制</h2>
+            <p>臭鼬最著名的生存绝技</p>
+        </div>
+        <div class="feature-list">
+            <div class="feature-item">
+                <div class="feature-icon">💣</div>
+                <div class="feature-content">
+                    <h3>喷射液体攻击</h3>
+                    <p>臭鼬尾部有两个大腺体，可以喷射出高浓度的刺激性液体。这种液体由硫化合物组成，气味极难消除，且具有强烈的催泪和呼吸道刺激作用。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-content">
+                    <h3>精准瞄准能力</h3>
+                    <p>虽然液体喷射距离有限，但臭鼬拥有极佳的瞄准能力。它们可以精确地将液体喷射到捕食者的眼睛或面部，这是它们自卫的主要手段。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-content">
+                    <h3>不可忽视的警告</h3>
+                    <p>在喷射液体之前，臭鼬通常会发出明显的警告信号：通过跺脚、发出嘶嘶声以及竖起尾巴上的白毛。大多数捕食者会选择撤退。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habitat & Behavior Section -->
+    <section id="habitat">
+        <div class="section-header">
+            <h2>栖息环境与行为</h2>
+            <p>活跃的夜行性猎手</p>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-tag">饮食习性</span>
+                    <h3>杂食性捕食者</h3>
+                    <p>臭鼬主要以小型哺乳动物、昆虫、鸟类、爬行动物和植物果实为食。它们是机会主义的捕食者，适应力极强。</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-tag">社会结构</span>
+                    <h3>独居生活</h3>
+                    <p>除繁殖季节外，臭鼬通常是独居动物。它们拥有复杂的领地意识，会通过尿液和粪便标记边界。</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-tag">冬眠习性</span>
+                    <h3>冬眠与活动</h3>
+                    <p>在严酷的冬季，某些地区的臭鼬会进入一种类似冬眠的深睡眠状态，以减少能量消耗。而在气候温和的地区，它们则全年保持活跃。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ / Care Guide Section -->
+    <section id="faq">
+        <div class="section-header">
+            <h2>饲养与常见问题</h2>
+            <p>适合作为宠物吗？</p>
+        </div>
+        <div class="grid-2">
+            <div>
+                <div class="faq-item">
+                    <div class="faq-question">臭鼬可以作为宠物饲养吗？</div>
+                    <div class="faq-answer">
+                        <p>在许多国家和地区，饲养臭鼬受到严格的法律限制或完全禁止，因为它们属于野生动物，可能携带狂犬病等疾病。即使在允许的地区，臭鼬的饲养也极具挑战性，需要专业的笼舍、特殊的饮食和极高的时间投入。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">臭鼬的气味有多难闻？</div>
+                    <div class="faq-answer">
+                        <p>臭鼬的气味来源于其尾部的腺体分泌物，这种气味比普通臭味强烈得多，且能持续数周甚至数月。即使经过彻底的清洁，这种气味仍可能残留，这使得它们不适合普通家庭饲养。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何处理臭鼬的防御行为？</div>
+                    <div class="faq-answer">
+                        <p>臭鼬受到威胁时会表现出攻击性。作为潜在的饲养者，必须了解当地的法律法规，并确保在受到攻击时采取正确的安全措施，避免被喷射。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+                <h3 style="margin-bottom: 1rem;">饲养准备清单</h3>
+                <ul style="list-style: none; color: var(--text-secondary);">
+                    <li style="margin-bottom: 0.5rem;">✓ 符合当地法律法规的饲养许可证</li>
+                    <li style="margin-bottom: 0.5rem;">✓ 结实且无尖锐边缘的金属笼舍</li>
+                    <li style="margin-bottom: 0.5rem;">✓ 专业的蛋白质猫粮或老鼠饲料</li>
+                    <li style="margin-bottom: 0.5rem;">✓ 丰富的玩具和隧道（满足挖掘本能）</li>
+                    <li style="margin-bottom: 0.5rem;">✓ 定期兽医检查计划</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>臭鼬百科</h4>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                致力于提供关于臭鼬这一独特生物的科普信息，帮助公众了解野生动物的保护现状。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#overview">物种介绍</a></li>
+                <li><a href="#defense">防御机制</a></li>
+                <li><a href="#habitat">栖息地</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>相关资源</h4>
+            <ul>
+                <li><a href="#">野生动物保护协会</a></li>
+                <li><a href="#">自然纪录片库</a></li>
+                <li><a href="#">动物行为学研究</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 臭鼬百科科普页面. 保留所有权利. 本页面仅供科普教育使用.
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Toggle Logic
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const parent = item.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+
+    // Smooth Scroll for Navigation
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
