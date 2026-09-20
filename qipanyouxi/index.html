@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="棋盘游戏探索指南 - 提供经典棋类、桌面策略游戏、战棋与棋盘游戏规则详解、新手入门教程及热门游戏推荐。">
+    <meta name="keywords" content="棋盘游戏, 桌游, 国际象棋, 围棋, 魔兽争霸, 策略游戏, 规则介绍">
+    <title>棋盘游戏-经典策略与桌面游戏规则指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --radius: 8px;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .hero-btn:hover {
+            background-color: #a93226;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: var(--spacing-lg) auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-lg);
+            border-left: 5px solid var(--accent-color);
+            padding-left: var(--spacing-md);
+            color: var(--primary-color);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-body {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            flex: 1;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tag {
+            background-color: #eef2f7;
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .tag.strategy { background-color: #e8f6f3; color: #16a085; }
+        .tag.board { background-color: #ebf5fb; color: #2980b9; }
+        .tag.party { background-color: #fdedec; color: #c0392b; }
+
+        /* List Style Section */
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+            background: var(--card-bg);
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ddd;
+            margin-right: var(--spacing-md);
+            width: 30px;
+            text-align: center;
+        }
+
+        .rank.top-3 { color: #f1c40f; }
+
+        .list-content {
+            flex: 1;
+        }
+
+        .list-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Guide Section */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-lg);
+        }
+
+        .guide-sidebar {
+            background: var(--card-bg);
+            padding: var(--spacing-md);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .guide-sidebar h3 {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .guide-list a {
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .guide-list a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .guide-article {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .guide-article h2 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+        }
+
+        .guide-article p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .guide-article h3 {
+            margin: var(--spacing-lg) 0 var(--spacing-sm);
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: var(--spacing-md);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: var(--spacing-md);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 var(--spacing-md) var(--spacing-md);
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid transparent;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            border-top-color: var(--border-color);
+            padding-top: var(--spacing-md);
+        }
+
+        .faq-icon {
+            transition: transform 0.2s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            padding: 40px 20px;
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            margin-bottom: var(--spacing-md);
+            color: #fff;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+            
+            nav ul {
+                gap: var(--spacing-md);
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span>♟️</span> 棋盘游戏指南
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#rules">游戏规则</a></li>
+                    <li><a href="#ranking">热门榜单</a></li>
+                    <li><a href="#guide">新手入门</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>探索策略与智慧的棋盘世界</h1>
+        <p>从古老的围棋、象棋到现代的德式策略桌游，在这里发现最适合你的棋盘游戏，掌握规则，提升策略，享受聚会乐趣。</p>
+        <a href="#ranking" class="hero-btn">浏览热门游戏</a>
+    </section>
+
+    <main class="container">
+        
+        <!-- Categories Section -->
+        <section id="categories">
+            <h2 class="section-title">棋盘游戏分类</h2>
+            <div class="grid-3">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/chess/400/250" alt="国际象棋" class="card-image">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag board">传统棋类</span>
+                            <span>2人对抗</span>
+                        </div>
+                        <h3 class="card-title">国际象棋</h3>
+                        <p class="card-desc">世界上最古老的策略游戏之一，考验逻辑思维与全局规划能力，适合单人练习或双人竞技。</p>
+                        <a href="#">查看规则详解 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/go/400/250" alt="围棋" class="card-image">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag board">传统棋类</span>
+                            <span>策略博弈</span>
+                        </div>
+                        <h3 class="card-title">围棋</h3>
+                        <p class="card-desc">黑白对弈的东方智慧，讲究围地与吃子，是培养大局观和计算能力的绝佳棋类。</p>
+                        <a href="#">查看规则详解 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/catan/400/250" alt="卡坦岛" class="card-image">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag strategy">德式策略</span>
+                            <span>多人聚会</span>
+                        </div>
+                        <h3 class="card-title">卡坦岛</h3>
+                        <p class="card-desc">现代经典桌游代表作，通过资源交易与城市建设建立自己的领地，互动性极强。</p>
+                        <a href="#">查看规则详解 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/war/400/250" alt="战棋" class="card-image">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag strategy">战棋</span>
+                            <span>模拟战争</span>
+                        </div>
+                        <h3 class="card-title">战棋</h3>
+                        <p class="card-desc">基于地图与棋子的战术模拟，需要精密的战术部署和兵种克制知识。</p>
+                        <a href="#">查看规则详解 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/dice/400/250" alt="骰子游戏" class="card-image">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag party">休闲娱乐</span>
+                            <span>运气博弈</span>
+                        </div>
+                        <h3 class="card-title">骰子游戏</h3>
+                        <p class="card-desc">依赖概率与运气的简单游戏，适合快速开始，节奏轻松愉快。</p>
+                        <a href="#">查看规则详解 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/strategy/400/250" alt="策略游戏" class="card-image">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag strategy">综合策略</span>
+                            <span>深度体验</span>
+                        </div>
+                        <h3 class="card-title">复杂策略</h3>
+                        <p class="card-desc">规则复杂、重度较高的棋盘游戏，提供沉浸式的文明建设或战争模拟体验。</p>
+                        <a href="#">查看规则详解 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Ranking Section -->
+        <section id="ranking">
+            <h2 class="section-title">年度热门棋盘游戏榜单</h2>
+            <div class="grid-4">
+                <div class="list-item">
+                    <div class="rank top-3">1</div>
+                    <div class="list-content">
+                        <div class="list-title">璀璨宝石</div>
+                        <div style="font-size:0.85rem; color:#888;">轻策 · 收集</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="rank top-3">2</div>
+                    <div class="list-content">
+                        <div class="list-title">车票之旅</div>
+                        <div style="font-size:0.85rem; color:#888;">版图 · 收集</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="rank top-3">3</div>
+                    <div class="list-content">
+                        <div class="list-title">瘟疫危机</div>
+                        <div style="font-size:0.85rem; color:#888;">合作 · 策略</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="rank">4</div>
+                    <div class="list-content">
+                        <div class="list-title">镰刀战争</div>
+                        <div style="font-size:0.85rem; color:#888;">战争 · 重策</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="rank">5</div>
+                    <div class="list-content">
+                        <div class="list-title">璀璨宝石</div>
+                        <div style="font-size:0.85rem; color:#888;">轻策 · 收集</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="rank">6</div>
+                    <div class="list-content">
+                        <div class="list-title">车票之旅</div>
+                        <div style="font-size:0.85rem; color:#888;">版图 · 收集</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="rank">7</div>
+                    <div class="list-content">
+                        <div class="list-title">瘟疫危机</div>
+                        <div style="font-size:0.85rem; color:#888;">合作 · 策略</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="rank">8</div>
+                    <div class="list-content">
+                        <div class="list-title">镰刀战争</div>
+                        <div style="font-size:0.85rem; color:#888;">战争 · 重策</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide">
+            <h2 class="section-title">新手入门指南</h2>
+            <div class="guide-layout">
+                <aside class="guide-sidebar">
+                    <h3>快速导航</h3>
+                    <nav class="guide-list">
+                        <a href="#intro">什么是棋盘游戏？</a>
+                        <a href="#choose">如何选择游戏？</a>
+                        <a href="#setup">游戏准备</a>
+                        <a href="#etiquette">礼仪与规则</a>
+                    </nav>
+                </aside>
+                <article class="guide-article">
+                    <h2 id="intro">什么是棋盘游戏？</h2>
+                    <p>棋盘游戏通常指在棋盘、地图或桌面区域上，通过移动棋子、掷骰子或抽取卡牌来进行互动的游戏。不同于电子游戏，棋盘游戏强调面对面的社交互动、实体卡牌的触感和策略规划的即时性。</p>
+                    
+                    <h2 id="choose">如何选择适合的游戏？</h2>
+                    <p>选择棋盘游戏主要考虑以下几点：</p>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li><strong>玩家数量：</strong> 确认是2人局、家庭局（4-6人）还是大型聚会局（8人以上）。</li>
+                        <li><strong>游戏时长：</strong> 轻松休闲的游戏通常在30分钟以内，重策游戏可能需要3-4小时。</li>
+                        <li><strong>游戏风格：</strong> 喜欢对抗竞争，还是合作解决问题？喜欢运气成分，还是纯粹的逻辑计算？</li>
+                    </ul>
+
+                    <h2 id="setup">基础游戏准备</h2>
+                    <p>无论哪种棋盘游戏，开始前都应确保：阅读说明书、摆放地图与棋子、确定起始玩家。对于复杂的策略游戏，建议先进行一次“热身局”，熟悉棋子的移动方式。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2 class="section-title">常见问题解答</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">棋盘游戏适合儿童吗？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">
+                    是的，市面上有大量专为儿童设计的棋盘游戏，如《小鸡快跑》、《动物森林》等，它们规则简单，色彩鲜艳，寓教于乐。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">玩棋盘游戏需要很强的数学能力吗？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">
+                    不需要。虽然部分策略游戏涉及资源计算，但大多数休闲游戏主要依赖观察力和策略规划，而非复杂的数学运算。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">在哪里可以买到这些游戏？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">
+                    您可以通过专业的桌游店、电商平台（如亚马逊、淘宝的桌游专区）或专门的桌游租赁平台体验游戏。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">初学者应该从哪种游戏开始？ <span class="faq-icon">▼</span></div>
+                <div class="faq-answer">
+                    推荐从《璀璨宝石》、《车票之旅》或《万智牌》等机制简单、上手快且互动性好的游戏开始。
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于棋盘游戏指南</h4>
+                <p style="font-size: 0.9rem; color: #bdc3c7;">致力于为玩家提供最全面的游戏规则介绍、策略分析及新手入门教程。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">游戏分类</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">规则查询</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#">投稿建议</a></li>
+                    <li><a href="#">合作推广</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 棋盘游戏指南 版权所有
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 导航栏平滑滚动
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+                          </html>
