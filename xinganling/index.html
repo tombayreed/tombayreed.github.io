@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="兴安岭旅游攻略，大兴安岭旅游指南，林海雪原、北极村、漠河北极光、俄罗斯风情体验及生态旅游信息。">
+    <meta name="keywords" content="兴安岭,大兴安岭,林海雪原,漠河,北极村,北极光,旅游攻略,黑龙江">
+    <title>兴安岭-林海雪原与极光秘境深度旅游指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c5e2e;
+            --secondary-color: #8c2a2a;
+            --accent-color: #d4a017;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --bg-white: #ffffff;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --spacing-unit: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/forest/1600/900') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #b8860b;
+            transform: translateY(-2px);
+        }
+
+        /* 通用 Section */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        /* 热门景点 */
+        .spots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .spot-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .spot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .spot-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .spot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .spot-card:hover .spot-image img {
+            transform: scale(1.05);
+        }
+
+        .spot-info {
+            padding: 20px;
+        }
+
+        .spot-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .spot-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #e8f5e9;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        /* 游玩季节 */
+        .seasons {
+            background-color: var(--bg-white);
+        }
+
+        .season-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .season-item {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            transition: all 0.3s;
+        }
+
+        .season-item:hover {
+            border-color: var(--primary-color);
+            background-color: #f1f8e9;
+        }
+
+        .season-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .season-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* 游玩指南 */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .guide-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 15px;
+        }
+
+        .guide-content p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .guide-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .guide-list li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar-box {
+            background-color: var(--bg-white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 90px;
+        }
+
+        .sidebar-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tips-list li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ */
+        .faq {
+            background-color: #f0f4f0;
+        }
+
+        .faq-item {
+            background-color: var(--bg-white);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar-box {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 22h20L12 2zm0 3.5L18.5 20H5.5L12 5.5z"/>
+                    <circle cx="12" cy="15" r="2"/>
+                </svg>
+                兴安岭<span>攻略</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">首页</a></li>
+                    <li><a href="#spots">必游景点</a></li>
+                    <li><a href="#seasons">四季玩法</a></li>
+                    <li><a href="#guide">出行指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>走进兴安岭，邂逅北国秘境</h1>
+                <p>林海雪原、极光秘境、异域风情。探索中国最北端的壮丽山河，体验纯净的自然馈赠。</p>
+                <a href="#spots" class="btn">开始探索</a>
+            </div>
+        </section>
+
+        <!-- 必游景点 -->
+        <section id="spots" class="container">
+            <div class="section-header">
+                <h2>热门必游景点</h2>
+                <p>精选大兴安岭地区最具代表性的自然与人文景观</p>
+            </div>
+            <div class="spots-grid">
+                <article class="spot-card">
+                    <div class="spot-image">
+                        <img src="https://picsum.photos/seed/aurora/400/300" alt="北极光">
+                    </div>
+                    <div class="spot-info">
+                        <span class="tag">自然奇观</span>
+                        <h3>漠河北极村</h3>
+                        <p>中国最北端的村庄，是中国唯一可观赏到北极光和极昼现象的地方，感受“金鸡之冠”的魅力。</p>
+                    </div>
+                </article>
+                <article class="spot-card">
+                    <div class="spot-image">
+                        <img src="https://picsum.photos/seed/snowforest/400/300" alt="林海雪原">
+                    </div>
+                    <div class="spot-info">
+                        <span class="tag">森林徒步</span>
+                        <h3>白山黑水林海</h3>
+                        <p>绵延千里的原始森林，四季景色各异。冬季银装素裹，夏季苍翠欲滴，是天然的大氧吧。</p>
+                    </div>
+                </article>
+                <article class="spot-card">
+                    <div class="spot-image">
+                        <img src="https://picsum.photos/seed/russia/400/300" alt="俄罗斯风情">
+                    </div>
+                    <div class="spot-info">
+                        <span class="tag">人文风情</span>
+                        <h3>恩和/室韦民族乡</h3>
+                        <p>体验浓郁的俄罗斯族风情，品尝正宗的俄式大餐，欣赏精美的木刻楞建筑。</p>
+                    </div>
+                </article>
+                <article class="spot-card">
+                    <div class="spot-image">
+                        <img src="https://picsum.photos/seed/lake/400/300" alt="呼玛河">
+                    </div>
+                    <div class="spot-info">
+                        <span class="tag">山水风光</span>
+                        <h3>呼玛河漂流</h3>
+                        <p>黑龙江支流，河水清澈见底，两岸风光旖旎。夏季是漂流和垂钓的绝佳去处。</p>
+                    </div>
+                </article>
+                <article class="spot-card">
+                    <div class="spot-image">
+                        <img src="https://picsum.photos/seed/sunrise/400/300" alt="极光">
+                    </div>
+                    <div class="spot-info">
+                        <span class="tag">摄影圣地</span>
+                        <h3>北红村</h3>
+                        <p>比北极村更原始、更安静的小村庄。这里也是观测北极光的最佳地点之一。</p>
+                    </div>
+                </article>
+                <article class="spot-card">
+                    <div class="spot-image">
+                        <img src="https://picsum.photos/seed/spring/400/300" alt="杜鹃花">
+                    </div>
+                    <div class="spot-info">
+                        <span class="tag">春季赏花</span>
+                        <h3>兴安杜鹃</h3>
+                        <p>大兴安岭的“报春花”，每年五月，漫山遍野的杜鹃花竞相开放，红艳如火。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 四季玩法 -->
+        <section id="seasons" class="seasons">
+            <div class="container">
+                <div class="section-header">
+                    <h2>四季兴安岭</h2>
+                    <p>不同的季节，兴安岭展现着截然不同的壮美画卷</p>
+                </div>
+                <div class="season-list">
+                    <div class="season-item">
+                        <span class="season-icon">❄️</span>
+                        <h3 class="season-title">冬季 (11月-次年3月)</h3>
+                        <p>冰雪奇缘。体验泼水成冰、雪地摩托、冰钓、滑雪等冰雪活动，感受极致的寒冷与激情。</p>
+                    </div>
+                    <div class="season-item">
+                        <span class="season-icon">🌲</span>
+                        <h3 class="season-title">春季 (4月-5月)</h3>
+                        <p>万物复苏。欣赏兴安杜鹃花海，气温回升，适合徒步和摄影。</p>
+                    </div>
+                    <div class="season-item">
+                        <span class="season-icon">🌿</span>
+                        <h3 class="season-title">夏季 (6月-8月)</h3>
+                        <p>避暑天堂。平均气温在20度左右，是避暑、避暑、森林浴的最佳时节。</p>
+                    </div>
+                    <div class="season-item">
+                        <span class="season-icon">🍁</span>
+                        <h3 class="season-title">秋季 (9月-10月)</h3>
+                        <p>层林尽染。金色的白桦林与红枫交相辉映，是摄影爱好者的黄金季节。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 出行指南 -->
+        <section id="guide" class="container">
+            <div class="guide-layout">
+                <div class="guide-content">
+                    <h3>实用出行指南</h3>
+                    <p>大兴安岭地区地广人稀，气候寒冷，交通相对不便。在规划行程前，请务必了解以下关键信息。</p>
+                    
+                    <h3>交通方式</h3>
+                    <p><strong>飞机：</strong>主要到达城市为哈尔滨或漠河，再转乘长途汽车或包车前往林区。</p>
+                    <p><strong>火车：</strong>“林海雪原号”旅游专列是体验大兴安岭风光的最佳方式，沿途停靠多个站点。</p>
+                    <p><strong>自驾：</strong>G111国道穿越大兴安岭，沿途风景优美，但冬季道路结冰，需具备冰雪驾驶经验。</p>
+
+                    <h3>穿衣建议</h3>
+                    <ul class="guide-list">
+                        <li><strong>冬季：</strong>羽绒服、保暖内衣、雪地靴、帽子、围巾、手套（三件套必备）。</li>
+                        <li><strong>夏季：</strong>长袖长裤、防蚊虫喷雾、防晒霜（紫外线强）。</li>
+                        <li><strong>秋季：</strong>早晚温差大，需准备冲锋衣或薄羽绒服。</li>
+                    </ul>
+                </div>
+
+                <aside>
+                    <div class="sidebar-box">
+                        <h4>旅行贴士</h4>
+                        <ul class="tips-list">
+                            <li><strong>保暖：</strong>室内外温差极大，进屋后切勿立即脱掉厚重外套。</li>
+                            <li><strong>信号：</strong>林区深处手机信号可能不稳定，建议提前下载离线地图。</li>
+                            <li><strong>饮食：</strong>以东北菜为主，分量大，口味偏咸。尝试冷水鱼、野味（需合规）。</li>
+                            <li><strong>防滑：</strong>冬季路面结冰，行走务必小心，避免滑倒。</li>
+                            <li><strong>摄影：</strong>拍摄极光需专业设备和极好的天气条件，切勿为了拍照冒险。</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题 (FAQ)</h2>
+                    <p>关于兴安岭旅游的疑问解答</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">去兴安岭旅游的最佳时间是什么时候？</div>
+                        <div class="faq-answer">
+                            <p>如果您想看冰雪奇观和极光，冬季（12月-次年2月）是最佳时间；如果您喜欢避暑和森林徒步，夏季（6月-8月）是最佳时间；秋季则是摄影爱好者的天堂。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">在大兴安岭能看到北极光吗？</div>
+                        <div class="faq-answer">
+                            <p>漠河、北红村等高纬度地区在极光活动强烈且天气晴朗的夜晚是有可能看到北极光的，但概率较低，且需要专业的观测设备和知识。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">冬季去大兴安岭安全吗？</div>
+                        <div class="faq-answer">
+                            <p>冬季路面结冰，存在一定的滑倒和交通事故风险。建议选择正规旅行社或具备冰雪驾驶经验的司机，并做好防滑措施。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">大兴安岭有哪些特色美食？</div>
+                        <div class="faq-answer">
+                            <p>特色美食包括野生冷水鱼、铁锅炖、蓝莓制品（蓝莓酱、蓝莓干）、野生蘑菇以及俄式面包和列巴。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于兴安岭</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        兴安岭（大兴安岭）是中国东北的重要林区，横跨黑龙江、内蒙古两省区。这里拥有广袤的原始森林和独特的少数民族文化，是生态旅游和探险爱好者的理想目的地。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#hero">回到顶部</a></li>
+                        <li><a href="#spots">热门景点</a></li>
+                        <li><a href="#seasons">四季玩法</a></li>
+                        <li><a href="#guide">出行指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱：info@xinganling-travel.com</li>
+                        <li>电话：0452-12345678</li>
+                        <li>地址：黑龙江省大兴安岭地区漠河市</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 兴安岭旅游指南网 版权所有 | 仅供展示使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 简单的平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 70;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
