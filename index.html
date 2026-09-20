@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TK联盟 - 提供专业的资源聚合与技术服务平台，包含最新资讯、技术文档、社区交流及资源下载。">
+    <meta name="keywords" content="tk联盟,资源聚合,技术服务,社区,下载">
+    <title>TK联盟-专业资源聚合与技术服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 15px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px;
+            padding-right: 120px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            font-size: 16px;
+            outline: none;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            padding: 10px 24px;
+            border-radius: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Main Content Grid */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Section Styles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 18px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .more-link {
+            font-size: 14px;
+            color: var(--primary-color);
+        }
+
+        /* Resource Cards */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-image {
+            height: 160px;
+            background-color: #e2e8f0;
+            position: relative;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .download-btn {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .category-count {
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .notice-list li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .notice-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin-bottom: 60px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 60px 0 30px;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                height: auto;
+                padding: 15px 0;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <span>TK联盟</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">资源下载</a></li>
+                    <li><a href="#">技术教程</a></li>
+                    <li><a href="#">社区论坛</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>连接技术与资源，共创数字未来</h1>
+                <p>TK联盟致力于为开发者、设计师及爱好者提供高质量的技术文档、开源工具与学习资源，助力个人成长与项目落地。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索资源、教程或关键词...">
+                    <button>搜索</button>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>10,000+</h3>
+                        <p>资源文件</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>技术教程</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50,000+</h3>
+                        <p>活跃用户</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <p>好评率</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container main-layout">
+            <!-- Main Content -->
+            <div class="content-area">
+                
+                <!-- Hot Resources -->
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">热门资源推荐</h2>
+                        <a href="#" class="more-link">查看全部 &rarr;</a>
+                    </div>
+                    <div class="resource-grid">
+                        <!-- Card 1 -->
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">工具</span>
+                                <img src="https://picsum.photos/seed/tool1/400/250" alt="TK资源编辑器">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">TK资源全能编辑器 v2.0 发布</h3>
+                                <p class="card-desc">全新界面设计，支持多格式导入导出，优化了批量处理效率，是您日常工作的得力助手。</p>
+                                <div class="card-footer">
+                                    <span class="card-meta">更新于: 2023-10-24</span>
+                                    <a href="#" class="download-btn">下载工具 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">教程</span>
+                                <img src="https://picsum.photos/seed/code2/400/250" alt="前端开发指南">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">2024年Web前端开发入门指南</h3>
+                                <p class="card-desc">从HTML5到现代框架，系统梳理前端学习路线，包含实战案例与面试技巧。</p>
+                                <div class="card-footer">
+                                    <span class="card-meta">更新于: 2023-10-23</span>
+                                    <a href="#" class="download-btn">阅读全文 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 3 -->
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">插件</span>
+                                <img src="https://picsum.photos/seed/plugin3/400/250" alt="TK浏览器插件">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">TK浏览器增强插件：数据抓取版</h3>
+                                <p class="card-desc">一键抓取网页数据，支持自定义规则，解放双手，提升信息收集效率。</p>
+                                <div class="card-footer">
+                                    <span class="card-meta">更新于: 2023-10-22</span>
+                                    <a href="#" class="download-btn">安装插件 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 4 -->
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">模板</span>
+                                <img src="https://picsum.photos/seed/template4/400/250" alt="企业官网模板">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">TK企业官网响应式模板</h3>
+                                <p class="card-desc">基于Bootstrap 5开发，SEO优化，多终端适配，开箱即用，快速搭建专业官网。</p>
+                                <div class="card-footer">
+                                    <span class="card-meta">更新于: 2023-10-21</span>
+                                    <a href="#" class="download-btn">获取模板 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Latest News -->
+                <section style="margin-top: 50px;">
+                    <div class="section-header">
+                        <h2 class="section-title">联盟动态</h2>
+                        <a href="#" class="more-link">更多资讯 &rarr;</a>
+                    </div>
+                    <div class="resource-grid" style="grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));">
+                        <article class="card" style="flex-direction: row; height: auto;">
+                            <div class="card-image" style="width: 200px; height: 140px; flex-shrink: 0;">
+                                <img src="https://picsum.photos/seed/news1/200/140" alt="新闻图片">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">TK联盟举办首届开发者线上沙龙</h3>
+                                <p class="card-desc">汇聚行业专家，探讨前沿技术趋势，分享实战经验，活动圆满结束。</p>
+                                <div class="card-footer" style="border: none; padding-top: 0;">
+                                    <span class="card-meta">2023-10-20</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card" style="flex-direction: row; height: auto;">
+                            <div class="card-image" style="width: 200px; height: 140px; flex-shrink: 0;">
+                                <img src="https://picsum.photos/seed/news2/200/140" alt="新闻图片">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">新增API接口支持，提升数据交互效率</h3>
+                                <p class="card-desc">为了满足用户对数据处理的更高需求，TK联盟今日正式上线新版API文档。</p>
+                                <div class="card-footer" style="border: none; padding-top: 0;">
+                                    <span class="card-meta">2023-10-18</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section class="faq-section">
+                    <div class="section-header">
+                        <h2 class="section-title">常见问题 (FAQ)</h2>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">TK联盟的资源是否免费？</div>
+                            <div class="faq-answer">TK联盟提供部分免费资源供个人学习和研究使用，同时也提供高级会员服务以获取独家商业授权和优先技术支持。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">如何获取下载权限？</div>
+                            <div class="faq-answer">注册账号后，大部分基础资源均可直接下载。部分特殊工具或模板可能需要达到一定积分或成为VIP会员方可下载。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">资源支持二次开发吗？</div>
+                            <div class="faq-answer">绝大多数开源资源均支持二次开发，具体请参考各资源页面的说明文档。如有商业用途需求，请联系客服咨询。</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Categories -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">资源分类</h3>
+                    <ul class="category-list">
+                        <li><a href="#">实用工具 <span class="category-count">120</span></a></li>
+                        <li><a href="#">开发框架 <span class="category-count">85</span></a></li>
+                        <li><a href="#">设计素材 <span class="category-count">340</span></a></li>
+                        <li><a href="#">视频教程 <span class="category-count">56</span></a></li>
+                        <li><a href="#">系统插件 <span class="category-count">42</span></a></li>
+                        <li><a href="#">移动应用 <span class="category-count">28</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Notice -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">最新公告</h3>
+                    <ul class="notice-list">
+                        <li>关于服务器维护的临时通知</li>
+                        <li>2023年第四季度会员权益升级公告</li>
+                        <li>新版下载站界面改版说明</li>
+                        <li>社区版块规则更新指引</li>
+                    </ul>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div class="sidebar-widget" style="background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #64748b; min-height: 200px;">
+                    广告位预留
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>TK联盟</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        TK联盟是一个专注于技术与资源共享的综合性平台。我们致力于构建一个开放、共享、互助的数字生态，帮助用户在快速变化的互联网时代保持竞争力。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">网站地图</a></li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源中心</h4>
+                    <ul>
+                        <li><a href="#">最新更新</a></li>
+                        <li><a href="#">热门下载</a></li>
+                        <li><a href="#">插件市场</a></li>
+                        <li><a href="#">模板库</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">技术邮箱</a></li>
+                        <li><a href="#">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 TK联盟 版权所有 | 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
