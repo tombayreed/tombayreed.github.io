@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="笑傲江湖李连杰国语电影专题页面，详细介绍电影剧情、经典台词、角色分析及高清资源下载指南。">
+    <meta name="keywords" content="笑傲江湖李连杰国语,笑傲江湖,李连杰,东方不败,电影资源,经典武侠">
+    <title>笑傲江湖李连杰国语-经典武侠电影剧情解析与高清资源指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8b0000; /* 深红，武侠风 */
+            --secondary-color: #d4af37; /* 金色，尊贵 */
+            --bg-dark: #1a1a1a;
+            --bg-card: #2d2d2d;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 导航栏 */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* 首屏 Hero */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/wuxia/1200/600') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            background: linear-gradient(to right, #fff, var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        /* 通用 Section */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+        }
+
+        /* 电影简介 */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .movie-poster {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border: 2px solid #333;
+        }
+
+        .movie-info h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .meta-tags {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .meta-tags span {
+            margin-right: 15px;
+            background: #333;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .synopsis {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* 经典台词 */
+        .quotes-section {
+            background-color: #252525;
+        }
+
+        .quote-card {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-left: 4px solid var(--secondary-color);
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .quote-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .quote-author {
+            text-align: right;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* 角色分析 */
+        .cast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .cast-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .cast-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cast-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #000;
+        }
+
+        .cast-info {
+            padding: 15px;
+        }
+
+        .cast-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .cast-role {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* 资源下载区 */
+        .resources-section {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1f1f1f 100%);
+            border-top: 1px solid #444;
+            border-bottom: 1px solid #444;
+        }
+
+        .download-box {
+            background-color: #222;
+            border: 1px solid #444;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .dl-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 300px;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: var(--secondary-color);
+            color: #000;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .dl-btn:hover {
+            background-color: #bfa030;
+            transform: scale(1.02);
+        }
+
+        .dl-info {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #111;
+            padding: 40px 0;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #888;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .intro-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* 简化移动端展示 */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">笑傲江湖</div>
+                <div class="nav-links">
+                    <a href="#intro">剧情简介</a>
+                    <a href="#quotes">经典台词</a>
+                    <a href="#cast">角色解析</a>
+                    <a href="#resources">资源下载</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>笑傲江湖：东方不败</h1>
+                <p>李连杰主演 · 徐克执导 · 经典武侠巨制</p>
+                <a href="#resources" class="btn">查看资源与解析</a>
+            </div>
+        </section>
+
+        <section id="intro" class="container">
+            <div class="section-title">电影简介</div>
+            <div class="intro-grid">
+                <img src="https://picsum.photos/seed/lianjie/600/800" alt="笑傲江湖电影海报" class="movie-poster">
+                <div class="movie-info">
+                    <h2>笑傲江湖：东方不败</h2>
+                    <div class="meta-tags">
+                        <span>1992年上映</span>
+                        <span>类型：武侠 / 动作 / 奇幻</span>
+                        <span>语言：国语</span>
+                    </div>
+                    <div class="synopsis">
+                        <p>影片讲述了明末乱世，江湖各路豪杰为争夺《葵花宝典》秘籍而引发的一场腥风血雨。令狐冲（李连杰 饰）与任盈盈（林青霞 饰）在江湖纷争中相遇，两人从对立到相知，共同对抗企图称霸武林的东方不败（林青霞 饰）。本片由徐克监制，程小东执导，打破了传统武侠片男尊女卑的框架，赋予了东方不败这一角色全新的诠释，成为华语影史上不可逾越的经典。</p>
+                    </div>
+                    <h3>观看指南</h3>
+                    <p style="margin-top:10px; color: #aaa;">建议在画质较好的播放器中观看，以获得最佳沉浸体验。本页面提供的资源为李连杰国语原声版本。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quotes" class="quotes-section">
+            <div class="container">
+                <div class="section-title">经典台词</div>
+                <div class="quote-card">
+                    <p class="quote-text">“有人就有恩怨，有恩怨就有江湖。人就是江湖，你怎么退出？”</p>
+                    <p class="quote-author">—— 令狐冲（李连杰 饰）</p>
+                </div>
+                <div class="quote-card">
+                    <p class="quote-text">“既然是江湖，就有人间烟火气。既然是江湖，就不能只有打打杀杀。”</p>
+                    <p class="quote-author">—— 任盈盈（林青霞 饰）</p>
+                </div>
+                <div class="quote-card">
+                    <p class="quote-text">“欲练神功，引刀自宫。若不自宫，也能成功？”</p>
+                    <p class="quote-author">—— 葵花宝典口诀</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cast" class="container">
+            <div class="section-title">主要角色</div>
+            <div class="cast-grid">
+                <div class="cast-card">
+                    <img src="https://picsum.photos/seed/linghu/300/400" alt="令狐冲" class="cast-img">
+                    <div class="cast-info">
+                        <div class="cast-name">令狐冲</div>
+                        <div class="cast-role">李连杰 饰</div>
+                    </div>
+                </div>
+                <div class="cast-card">
+                    <img src="https://picsum.photos/seed/dongfang/300/400" alt="东方不败" class="cast-img">
+                    <div class="cast-info">
+                        <div class="cast-name">东方不败</div>
+                        <div class="cast-role">林青霞 饰</div>
+                    </div>
+                </div>
+                <div class="cast-card">
+                    <img src="https://picsum.photos/seed/jinlvyu/300/400" alt="任盈盈" class="cast-img">
+                    <div class="cast-info">
+                        <div class="cast-name">任盈盈</div>
+                        <div class="cast-role">林青霞 饰</div>
+                    </div>
+                </div>
+                <div class="cast-card">
+                    <img src="https://picsum.photos/seed/pingzhi/300/400" alt="岳不群" class="cast-img">
+                    <div class="cast-info">
+                        <div class="cast-name">岳不群</div>
+                        <div class="cast-role">李子雄 饰</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="resources-section">
+            <div class="container">
+                <div class="section-title">资源下载与观看</div>
+                <div class="download-box">
+                    <h3>高清资源推荐</h3>
+                    <p style="margin: 15px 0; color: #ccc;">本站提供李连杰国语版《笑傲江湖》相关资源信息及播放指南。</p>
+                    
+                    <a href="#" class="dl-btn" onclick="alert('这是一个演示链接，实际场景中此处为下载按钮。'); return false;">
+                        下载国语原声版 (1080P)
+                    </a>
+                    <a href="#" class="dl-btn" onclick="alert('这是一个演示链接，实际场景中此处为观看按钮。'); return false;">
+                        在线播放
+                    </a>
+
+                    <div class="dl-info">
+                        <p>文件大小：约 2.5 GB</p>
+                        <p>格式：MKV / MP4</p>
+                        <p>注意：请支持正版，请勿用于商业用途。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">版权声明</a>
+                <a href="#">联系站长</a>
+                <a href="#">免责声明</a>
+            </div>
+            <p>&copy; 2023 武侠影视资料站. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
