@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白袜脚 - 时尚穿搭与舒适生活指南</title>
+    <meta name="description" content="白袜脚 - 探索白袜脚的时尚穿搭技巧、舒适材质选择及搭配指南。为您提供专业的白袜选购建议，展示不同风格下的白袜脚搭配艺术。">
+    <meta name="keywords" content="白袜脚, 白袜搭配, 时尚穿搭, 舒适袜子, 鞋袜搭配">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--accent-color);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .category-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .category-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Feature Section */
+        .feature-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin-bottom: 4rem;
+        }
+
+        .feature-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: #eee;
+            border-radius: 12px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .feature-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .feature-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .feature-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-content p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .check-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+        }
+
+        .check-list li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Guide List */
+        .guide-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .guide-item:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .guide-thumb {
+            height: 200px;
+            background-color: #e9ecef;
+            position: relative;
+        }
+
+        .guide-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .guide-body {
+            padding: 1.5rem;
+        }
+
+        .guide-body h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .guide-body p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            margin-bottom: 4rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            display: none;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    白袜脚
+                </a>
+                <div class="nav-links">
+                    <a href="#style">穿搭指南</a>
+                    <a href="#care">清洁保养</a>
+                    <a href="#materials">材质选择</a>
+                    <a href="#faq">常见问题</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>展现清新活力的白袜脚美学</h1>
+            <p>探索白袜脚的无限可能，从日常休闲到时尚潮流，了解如何通过一双干净的白袜提升整体造型的质感与舒适度。</p>
+            <a href="#style" class="cta-button">开始探索穿搭技巧</a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Core Categories -->
+        <section id="style">
+            <h2 class="section-title">核心风格分类</h2>
+            <div class="category-grid">
+                <article class="category-card">
+                    <span class="category-icon">👟</span>
+                    <h3>运动休闲风</h3>
+                    <p>适合跑步、健身及日常出行的低帮运动袜，搭配运动鞋展现活力。</p>
+                </article>
+                <article class="category-card">
+                    <span class="category-icon">👔</span>
+                    <h3>商务休闲风</h3>
+                    <p>九分袜或低帮袜，搭配皮鞋或乐福鞋，营造干练利落的职场形象。</p>
+                </article>
+                <article class="category-card">
+                    <span class="category-icon">🧢</span>
+                    <h3>街头潮流风</h3>
+                    <p>高筒袜与球鞋的经典组合，打破沉闷，彰显个性态度。</p>
+                </article>
+                <article class="category-card">
+                    <span class="category-icon">🏖️</span>
+                    <h3>度假度假风</h3>
+                    <p>轻薄透气的短袜，搭配凉鞋或人字拖，享受夏日清凉。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Feature Section -->
+        <section class="feature-section" id="care">
+            <div class="feature-image">
+                <!-- Using picsum with specific seed for consistency -->
+                <img src="https://picsum.photos/seed/socks1/600/400" alt="白袜脚搭配展示">
+            </div>
+            <div class="feature-content">
+                <h2>如何保持白袜脚的洁净与舒适</h2>
+                <p>白袜脚是时尚界的经典元素，但也是最难打理的单品之一。想要长期保持白袜的亮丽与袜子的柔软，正确的护理至关重要。</p>
+                <ul class="check-list">
+                    <li>选择透气性好的天然棉质或混纺材质，减少细菌滋生。</li>
+                    <li>避免穿着湿袜子过夜，及时清洗并彻底晾干。</li>
+                    <li>使用中性洗涤剂，冷水洗涤以防止缩水和褪色。</li>
+                    <li>定期进行高温消毒或使用衣物除菌液，确保卫生。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Guide List -->
+        <section id="materials">
+            <h2 class="section-title">选购与搭配指南</h2>
+            <div class="guide-list">
+                <article class="guide-item">
+                    <div class="guide-thumb">
+                        <img src="https://picsum.photos/seed/socks2/400/300" alt="棉质白袜推荐">
+                    </div>
+                    <div class="guide-body">
+                        <h3>纯棉白袜的优缺点分析</h3>
+                        <p>纯棉材质吸汗性好，亲肤舒适，是日常穿着的首选。但需要注意其耐磨性相对较弱，且容易变形。</p>
+                        <a href="#" class="read-more">阅读更多 &rarr;</a>
+                    </div>
+                </article>
+                <article class="guide-item">
+                    <div class="guide-thumb">
+                        <img src="https://picsum.photos/seed/socks3/400/300" alt="白色袜子搭配技巧">
+                    </div>
+                    <div class="guide-body">
+                        <h3>白袜与鞋子的黄金搭配法则</h3>
+                        <p>白袜与浅色系运动鞋（如小白鞋、帆布鞋）最为百搭。深色皮鞋则建议搭配深色或藏青色袜子以显正式。</p>
+                        <a href="#" class="read-more">阅读更多 &rarr;</a>
+                    </div>
+                </article>
+                <article class="guide-item">
+                    <div class="guide-thumb">
+                        <img src="https://picsum.photos/seed/socks4/400/300" alt="白袜清洗教程">
+                    </div>
+                    <div class="guide-body">
+                        <h3>去除白袜顽固污渍的妙招</h3>
+                        <p>针对咖啡渍、油渍等顽固污渍，可以使用小苏打加白醋的混合液浸泡，或者使用专用去渍笔进行局部处理。</p>
+                        <a href="#" class="read-more">阅读更多 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <h2 class="section-title">常见问题解答</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">白袜脚容易发黄怎么办？</div>
+                    <div class="faq-answer">
+                        白袜发黄通常是因为汗液中的蛋白质与洗涤剂残留反应。建议在清洗时加入适量的柠檬汁或漂白剂（针对白色纯棉袜），并在阳光下充分暴晒。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">什么场合不适合穿白袜脚？</div>
+                    <div class="faq-answer">
+                        在正式的商务晚宴或极其严肃的礼仪场合，过于随意的白袜可能显得不够庄重。此时建议选择深色丝袜或西装袜。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何选择袜子的厚度？</div>
+                    <div class="faq-answer">
+                        夏季建议选择薄款棉袜以保持足部干爽；春秋季可选择中厚款；冬季则需加绒保暖袜。厚度需根据季节和活动强度决定。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2; min-width: 250px;">
+                    <h4>白袜脚</h4>
+                    <p style="color: #bdc3c7; line-height: 1.8;">
+                        专注分享白袜脚的穿搭灵感、清洁技巧与选购指南。我们致力于帮助您找到最舒适、最时尚的袜品搭配方案。
+                    </p>
+                </div>
+                <div class="footer-col" style="flex: 1; min-width: 150px;">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">合作投稿</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">使用条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" style="flex: 1; min-width: 150px;">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">邮箱联系</a></li>
+                        <li><a href="#">客服中心</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 白袜脚时尚生活指南. 保留所有权利.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
